@@ -44,9 +44,11 @@ _**Se comporta casi de la misma manera solo se ve una mejora en el tiempo de eje
 **Preguntas**
 
 * **¿Qué es un Azure Function?**
+
 Azure Function es una solución para ejecutar fácilmente pequeños fragmentos de código o “funciones” en la nube. Toma los conceptos básicos de los ya conocidos WebJobs y los amplía de forma interesante. Azure Function nos presenta una multitud de nuevos triggers para poder ejecutarlo.
 
 * **¿Qué es serverless?**
+
 La computación sin servidor (o serverless para abreviar) es un modelo de ejecución en el que el proveedor en la nube (AWS, Azure o Google Cloud) es responsable de ejecutar un fragmento de código mediante la asignación dinámica de los recursos. Y cobrando solo por la cantidad de recursos utilizados para ejecutar el código. El código, generalmente, se ejecuta dentro de contenedores sin estado que pueden ser activados por una variedad de eventos que incluyen solicitudes HTTP, eventos de base de datos, servicios de colas, alertas de monitoreo, carga de archivos, eventos programados (trabajos cron), etc. El código que se envía a al proveedor en la nube para la ejecución es generalmente en forma de una función. Por lo tanto, serverless a veces se denomina “Funciones como servicio” o “FaaS”. Las siguientes son las ofertas de FaaS de los principales proveedores en la nube:
 
 AWS: AWS Lambda
@@ -54,9 +56,11 @@ Microsoft Azure: Azure Functions
 Google Cloud: Cloud Functions
 
 * **¿Qué es el runtime y que implica seleccionarlo al momento de crear el Function App?**
+
 Las versiones principales del tiempo de ejecución de Azure Functions están relacionadas con la versión de .NET en la que se basa el tiempo de ejecución. La siguiente tabla indica la versión actual del tiempo de ejecución, el nivel de lanzamiento y la versión relacionada de .NET.
 
 * **¿Por qué es necesario crear un Storage Account de la mano de un Function App?**
+
 Porque proporciona un espacio de nombres único para que los datos de Azure Storage sean accesibles a través de HTTP.
 
 * **¿Cuáles son los tipos de planes para un Function App?, ¿En qué se diferencias?, mencione ventajas y desventajas de cada uno de ellos.**
