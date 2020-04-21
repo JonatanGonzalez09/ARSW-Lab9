@@ -1,4 +1,23 @@
 var bigInt = require("big-integer");
+
+var memo = [];
+
+function f(n) {
+    var value;
+
+    if (n === 0 || n === 1) {
+        value = bigInt.one;
+    } else {
+        if (memo[n] != '') {
+            value = memo[n];
+        } else {
+            memo[n] = f(n - 1) + f(n - 2);
+            value = memo[n];
+        }
+    }
+    return value;
+}
+
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
@@ -14,11 +33,13 @@ module.exports = async function (context, req) {
     else if (nth === 1)
         answer = nth_1
     else {
-        for (var i = 0; i < nth - 1; i++) {
-            answer = nth_2.add(nth_1)
-            nth_2 = nth_1
-            nth_1 = answer
+        if (nth + 1 > memo.length) {
+            memo = [];
+            for (var i = 0; i < nth + 1; i++) {
+                memo.push('');
+            }
         }
+        answer = f(nth);
     }
 
     context.res = {
